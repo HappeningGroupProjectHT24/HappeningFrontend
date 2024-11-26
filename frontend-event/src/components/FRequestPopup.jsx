@@ -90,7 +90,7 @@ const FRequestPopup = ({ friendReq, onClose, updateFriendReq }) => {
 }
 
 export default FRequestPopup
-//i friendRq finns det:
+//i friendRq finns det: hh
 // [
 //     {
 //         "id": 10,
