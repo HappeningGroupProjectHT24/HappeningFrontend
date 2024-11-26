@@ -1,9 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import FriendBox from '../components/FriendBox';
 import { useNavigate, useLocation } from 'react-router-dom';
-import FavoriteBox from '../components/FavoriteBox';
+import FriendFavoriteBox from '../components/FriendFavoriteBox';
 import { jwtDecode } from 'jwt-decode';
 
 const FriendPage = () => {
@@ -87,7 +86,7 @@ const FriendPage = () => {
                     {/* <FriendBox friends={friends} /> */}
 
                     {/* favorite Box component */}
-                    <FavoriteBox id={userId} />
+                    <FriendFavoriteBox id={userId} />
                 </div>
             </div>
         </>

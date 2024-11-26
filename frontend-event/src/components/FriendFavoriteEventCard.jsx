@@ -3,7 +3,7 @@ import FavoriteEventPopup from './FavoriteEventPopup';
 import './style/FavoriteEventCardStyle.css'
 import { jwtDecode } from 'jwt-decode';
 
-const EventCard = ({ event }) => {
+const FriendFavoriteEventCard = ({ event }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const dateDisplay = event.date;
 
@@ -93,8 +93,6 @@ const EventCard = ({ event }) => {
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </button>
-                    <button onClick={handleEventDelete} type="button" class="ml-16 inline-flex items-center px-3 py-2 text-sm font-medium text-centerfocus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 rounded-lg  me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 ">
-                        Ta Bort</button>
                 </div>
             </div>
 
@@ -105,4 +103,4 @@ const EventCard = ({ event }) => {
     );
 }
 
-export default EventCard
+export default FriendFavoriteEventCard
