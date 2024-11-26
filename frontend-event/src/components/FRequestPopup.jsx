@@ -62,7 +62,7 @@ const FRequestPopup = ({ friendReq, onClose, updateFriendReq }) => {
                     {friends.length > 0 ? (
                         friends.map((friend, index) => (
                             <div key={index}
-                                className="flex items-center shadow-md w-[17rem] transition-transform rounded-md bg-Flesh p-3 mb-3">
+                                className="flex justify-between items-center shadow-md w-[17rem] transition-transform rounded-md bg-Flesh p-3 mb-3">
                                 <div onClick={() => HandleViewFriendPage(friend.id)} className='cursor-pointer flex space-x-3'>
                                     <img
                                         src={friend.profilePictureUrl}
