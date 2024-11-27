@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
   <head>
-    <meta charset="UTF-8" name="description"
-    content="Happening Events App made to give users access to events from several sources" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-LDPB450JPX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-LDPB450JPX");
+    </script>
+
+    <meta
+      charset="UTF-8"
+      name="description"
+      content="Happening Events App made to give users access to events from several sources"
+    />
     <link rel="icon" type="image/svg+xml" href="./src/assets/EVtab.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,9 +44,8 @@
     <title>Happening</title>
   </head>
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
-
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
