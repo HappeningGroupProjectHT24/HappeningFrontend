@@ -37,7 +37,7 @@ const AdminPage = () => {
                     return
                 }
 
-                const response = await axios.get(`https://localhost:7261/api/Admin/users`, {
+                const response = await axios.get(`https://happeningevent.azurewebsites.net/api/Admin/users`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
 

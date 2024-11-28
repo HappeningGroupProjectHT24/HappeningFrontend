@@ -39,7 +39,7 @@ const HamburgerMenu = () => {
     const handleLogOut = async () => {
         try {
             // Sending the POST request to logout the user
-            const response = await axios.post("https://localhost:7261/api/Auth/logout", {}, {
+            const response = await axios.post("https://happeningevent.azurewebsites.net/api/Auth/logout", {}, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem("token")}`,
                 },

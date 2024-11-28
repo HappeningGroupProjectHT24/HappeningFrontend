@@ -26,7 +26,7 @@ const FRequestPopup = ({ friendReq, onClose, updateFriendReq }) => {
     }, [friendReq])
 
     const acceptHandler = async (idn) => {
-        await axios.post(`https://localhost:7261/api/Friendship/AcceptFriendRequest?friendshipId=${idn}`)
+        await axios.post(`https://happeningevent.azurewebsites.net/api/Friendship/AcceptFriendRequest?friendshipId=${idn}`)
         console.log('testidn', idn)
 
         setFriends(friendss => friendss.filter((_, index) => reqIds[index] !== idn));
@@ -34,7 +34,7 @@ const FRequestPopup = ({ friendReq, onClose, updateFriendReq }) => {
         updateFriendReq(t => t.filter(req => req.id !== idn))
     }
     const denyHandler = async (idn) => {
-        await axios.post(`https://localhost:7261/api/Friendship/DeclineFriendRequest?friendshipId=${idn}`)
+        await axios.post(`https://happeningevent.azurewebsites.net/api/Friendship/DeclineFriendRequest?friendshipId=${idn}`)
 
         setFriends(friendss => friendss.filter((_, index) => reqIds[index] !== idn));
         setReqIds(requIds => requIds.filter(reqId => reqId !== idn));
