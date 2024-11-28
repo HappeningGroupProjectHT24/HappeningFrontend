@@ -45,7 +45,7 @@ const LandingPageEventCard = ({ event }) => {
         <div className="pt-4">
           {/* date div */}
           <div className="p-1 pl-4">
-            <p className="mb-2 font-normal text-black-700 dark:text-black-400">
+            <p className="mb-2 font-quicksand text-black-700 dark:text-black-400">
               {dateDisplay ? (
                 <p>
                   {new Date(dateDisplay).toLocaleString("sv-SE", {
@@ -70,14 +70,14 @@ const LandingPageEventCard = ({ event }) => {
         {/* title div */}
         <div className="w-auto h-[3rem] mb-2">
           <a href="#">
-            <h6 className="mb-2 text-xl font-bold tracking-tight text-black truncate">
+            <h6 className="mb-2 text-xl font-dancing tracking-tight text-Purple truncate">
               {event.title}
             </h6>
           </a>
         </div>
         {/* venue & city div */}
         <div>
-          <p className="mb-4">
+          <p className="mb-4 font-quicksand">
             {event.venue.name} <br />
             {event.venue.city}
           </p>

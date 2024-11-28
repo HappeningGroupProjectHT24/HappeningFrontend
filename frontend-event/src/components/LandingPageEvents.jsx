@@ -80,7 +80,7 @@ const LandingPageEvents = () => {
 
   if (error) {
     return (
-      <div className="text-red-500 text-center">
+      <div className="text-red-500 text-center font-quicksand">
         <p>Failed to load events. Please refresh the webpage.</p>
       </div>
     );
