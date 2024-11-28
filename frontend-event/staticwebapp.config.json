@@ -1,0 +1,45 @@
+{
+    "version": 1,
+    "routes": [
+        {
+            "route": "/events/*",
+            "serve": "/index.html",
+            "statusCode": 200
+        },
+        {
+            "route": "/aboutus/*",
+            "serve": "/index.html",
+            "statusCode": 200
+        },
+        {
+            "route": "/admin/*",
+            "serve": "/index.html",
+            "statusCode": 200
+        },
+        {
+            "route": "/user/*",
+            "serve": "/index.html",
+            "statusCode": 200
+        },
+        {
+            "route": "/login/*",
+            "serve": "/index.html",
+            "statusCode": 200
+        },
+        {
+            "route": "/register/*",
+            "serve": "/index.html",
+            "statusCode": 200
+        },
+        {
+            "route": "/forgotPassword/*",
+            "serve": "/index.html",
+            "statusCode": 200
+        },
+        {
+            "route": "/404",
+            "serve": "/404.html",
+            "statusCode": 404
+        }
+    ]
+}
