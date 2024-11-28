@@ -81,8 +81,9 @@ const Login = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className={`w-full py-2 mb-4 text-white rounded-lg ${isLoading ? "bg-gray-400" : "bg-BloodOrange hover:bg-opacity-90"
-              }`}
+            className={`w-full py-2 mb-4 text-white rounded-lg ${
+              isLoading ? "bg-gray-400" : "bg-BloodOrange hover:bg-opacity-90"
+            }`}
           >
             {isLoading ? "Loggar in..." : "Login"}
           </button>
@@ -90,7 +91,7 @@ const Login = () => {
           <div className="flex justify-between mb-4 text-sm">
             <button
               type="button"
-              onClick={handleRegisterView}
+              onClick={() => navigate("/register")}
               className="text-Purple hover:underline"
             >
               Registrera
