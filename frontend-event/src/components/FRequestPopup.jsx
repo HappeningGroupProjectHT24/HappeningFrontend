@@ -32,6 +32,7 @@ const FRequestPopup = ({ friendReq, onClose, updateFriendReq }) => {
         setFriends(friendss => friendss.filter((_, index) => reqIds[index] !== idn));
         setReqIds(requIds => requIds.filter(reqId => reqId !== idn));
         updateFriendReq(t => t.filter(req => req.id !== idn))
+        location.reload();
     }
     const denyHandler = async (idn) => {
         await axios.post(`https://happeningevent.azurewebsites.net/api/Friendship/DeclineFriendRequest?friendshipId=${idn}`)
@@ -39,6 +40,7 @@ const FRequestPopup = ({ friendReq, onClose, updateFriendReq }) => {
         setFriends(friendss => friendss.filter((_, index) => reqIds[index] !== idn));
         setReqIds(requIds => requIds.filter(reqId => reqId !== idn));
         updateFriendReq(t => t.filter(req => req.id !== idn))
+        location.reload();
     }
 
     const HandleViewFriendPage = (userId) => {
@@ -90,41 +92,3 @@ const FRequestPopup = ({ friendReq, onClose, updateFriendReq }) => {
 }
 
 export default FRequestPopup
-//i friendRq finns det: hh
-// [
-//     {
-//         "id": 10,
-//         "userId": "f255ba33-c204-4486-b01a-388c47e8ad33",
-//         "user": {
-//             "id": "f255ba33-c204-4486-b01a-388c47e8ad33",
-//             "firstName": "Anna",
-//             "lastName": "Anka",
-//             "nickName": "Ankan",
-//             "userName": "anna89",
-//             "email": "anna89@example.com",
-//             "phoneNumber": null,
-//             "profilePictureUrl": "https://img.freepik.com/free-vector/mans-face-flat-style_90220-2877.jpg"
-//         },
-//         "friendId": "73f663e9-f16b-4503-988a-461318f3ebca",
-//         "friend": {
-//             "id": "73f663e9-f16b-4503-988a-461318f3ebca",
-//             "firstName": "Martin",
-//             "lastName": "Karlsson",
-//             "nickName": "MatteK",
-//             "userName": "martinK",
-//             "email": "martin.karlsson@msn.se",
-//             "phoneNumber": "0765644049",
-//             "profilePictureUrl": "https://img.freepik.com/free-vector/mans-face-flat-style_90220-2877.jpg"
-//         },
-//         "createdDate": "2024-11-21T09:41:54.7271451"
-//     }
-// ]
-
-
-// // Looping through all friend requests and adding userId's to ids (list of ID's)
-// const ids = friendReq.map(i => i.userId)
-// looping through id's then fetching objects from api with matching id and storing in apiResponse
-// const apiResponse = await Promise.all(ids.map(id => axios.get(`https://localhost:7261/api/User/GetUserById?id=${id}`)));
-
-// //Looping through apiResponse and taking out the user data and storing in user
-// const user = apiResponse.map(response => response.data);

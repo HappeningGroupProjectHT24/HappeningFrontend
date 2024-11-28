@@ -10,8 +10,6 @@ const FriendPage = () => {
     const [user, setUser] = useState(null);
     const [friends, setFriends] = useState([]);
     const [friendReq, setFriendReq] = useState([])
-    const [button, setButton] = useState();
-    const navigate = useNavigate();
     const location = useLocation();
     const userId = location.state?.userId;
 
@@ -48,8 +46,8 @@ const FriendPage = () => {
     const sendFriendReq = async () => {
         try {
             console.log('första inloggad andra kompis', inloggedUserId, user.userId)
-            await axios.post(`https://localhost:7261/api/Friendship/SendFriendRequest?userId=${inloggedUserId}&friendId=${user.userId}`)
-
+            await axios.post(`https://happeningevent.azurewebsites.net/api/Friendship/SendFriendRequest?userId=${inloggedUserId}&friendId=${user.userId}`)
+            location.reload();
             //"fake" setting data so it'll show "pending" without refreshing whole page
             setFriendReq(prevReq => [...prevReq, { friendId: inloggedUserId, user: { id: inloggedUserId, firstName: 'user', lastName: 'userson' } }]);
 
