@@ -1,0 +1,48 @@
+{
+    "routes": [
+        {
+            "route": "/",
+            "serve": "/index.html"
+        },
+        {
+            "route": "/login",
+            "serve": "/index.html"
+        },
+        {
+            "route": "/register",
+            "serve": "/index.html"
+        },
+        {
+            "route": "/forgotPassword",
+            "serve": "/index.html"
+        },
+        {
+            "route": "/admin",
+            "serve": "/index.html"
+        },
+        {
+            "route": "/events",
+            "serve": "/index.html"
+        },
+        {
+            "route": "/user",
+            "serve": "/index.html"
+        },
+        {
+            "route": "/friend",
+            "serve": "/index.html"
+        },
+        {
+            "route": "/allfriends",
+            "serve": "/index.html"
+        },
+        {
+            "route": "/editprofile",
+            "serve": "/index.html"
+        },
+        {
+            "route": "/aboutus",
+            "serve": "/index.html"
+        }
+    ]
+}
