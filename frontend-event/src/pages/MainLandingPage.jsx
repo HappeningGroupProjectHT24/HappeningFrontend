@@ -50,7 +50,7 @@ const LandingPage = () => {
       {/* Action Section */}
 
       <div className="flex flex-col align-center justify-center my-4">
-        <h2 className="mt-3 mb-6 font-bebas bg-Flesh sm:text-2xl">
+        <h2 className="mt-3 mb-6 font-bebas bg-Flesh sm:text-3xl">
           Kommande evenemang
         </h2>
         <LandingPageEvents />
@@ -58,7 +58,7 @@ const LandingPage = () => {
       <div className="mb-6 flex flex-col gap-4 w-full px-6">
         <button
           onClick={handleEventsRedirect}
-          className="bg-BloodOrange font-bebas sm:w-full md:w-96 md:m-auto py-3 rounded-lg font-semibold border-2 border-black hover:bg-[#f4e4e4] transition sm:text-xl"
+          className="bg-Flesh font-bebas sm:w-full md:w-96 md:m-auto py-3 rounded-lg font-semibold border-2 border-BloodOrange hover:bg-[#f4e4e4] transition sm:text-xl"
         >
           Se Alla Events
         </button>
@@ -66,7 +66,7 @@ const LandingPage = () => {
       <div className="mb-6 flex flex-col gap-4 w-full px-6 ">
         <button
           onClick={handleLoginRedirect}
-          className="bg-BloodOrange font-bebas sm:w-full md:w-96 md:m-auto py-3 rounded-lg font-semibold border-2 border-black hover:bg-[#f4e4e4] transition sm:text-xl"
+          className="bg-Flesh font-bebas sm:w-full md:w-96 md:m-auto py-3 rounded-lg font-semibold border-2 border-BloodOrange hover:bg-[#f4e4e4] transition sm:text-xl"
         >
           Logga In/Skapa Konto
         </button>
