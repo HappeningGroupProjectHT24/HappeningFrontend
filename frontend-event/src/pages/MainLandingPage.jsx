@@ -58,7 +58,7 @@ const LandingPage = () => {
       <div className="mb-6 flex flex-col gap-4 w-full px-6">
         <button
           onClick={handleEventsRedirect}
-          className="text-BloodOrange border-2 border-BloodOrange bg-white py-3 rounded-lg font-bebas font-semibold hover:scale-105 transition-transform duration-300 sm:w-full md:w-96 md:m-auto sm:text-xl"
+          className="text-BloodOrange border-2 border-Purple bg-white py-3 rounded-lg font-bebas font-semibold hover:scale-105 transition-transform duration-300 sm:w-full md:w-96 md:m-auto sm:text-xl"
         >
           Se Alla Events
         </button>
@@ -66,7 +66,7 @@ const LandingPage = () => {
       <div className="mb-6 flex flex-col gap-4 w-full px-6">
         <button
           onClick={handleLoginRedirect}
-          className="text-BloodOrange border-2 border-BloodOrange bg-white py-3 rounded-lg font-bebas font-semibold hover:scale-105 transition-transform duration-300 sm:w-full md:w-96 md:m-auto sm:text-xl"
+          className="text-BloodOrange border-2 border-Purple bg-white py-3 rounded-lg font-bebas font-semibold hover:scale-105 transition-transform duration-300 sm:w-full md:w-96 md:m-auto sm:text-xl"
         >
           Logga In/Skapa Konto
         </button>

@@ -29,7 +29,7 @@ const LandingPageEventPopup = ({ event, onClose }) => {
         {/* c */}
         <div className="p-5">
           {/* Titel */}
-          <h2 className="text-xl font-dancing text-Purple">{event.title}</h2>
+          <h2 className="text-2xl font-dancing text-Purple">{event.title}</h2>
 
           {/* Date */}
           <div className="mt-3">
