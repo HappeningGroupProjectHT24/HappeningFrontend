@@ -88,20 +88,18 @@ const Login = () => {
             {isLoading ? "Loggar in..." : "Login"}
           </button>
           {error && <p className="mb-4 text-center text-red-600">{error}</p>}
-          <div className="flex justify-between mb-4 text-sm">
+          <div className="flex justify-between mt-4">
             <button
               type="button"
               onClick={() => navigate("/register")}
-              className="text-Purple hover:underline"
+              className="px-4 py-2 text-white bg-BloodOrange rounded-lg hover:bg-opacity-90"
             >
               Registrera
             </button>
-          </div>
-          <div className="flex justify-between mb-4 text-sm">
             <button
               type="button"
               onClick={() => navigate("/")}
-              className="text-Purple hover:underline"
+              className="px-4 py-2 text-white bg-gray-500 rounded-lg hover:bg-opacity-90"
             >
               Gå tillbaka
             </button>
