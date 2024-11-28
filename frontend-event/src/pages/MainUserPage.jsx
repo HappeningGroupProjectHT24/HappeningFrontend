@@ -20,9 +20,9 @@ const UserPage = () => {
     useEffect(() => {
         const getUser = async () => {
             try {
-                const usern = await axios.get(`https://localhost:7261/api/User/GetUserById?id=${userId}`)
-                const friendz = await axios.get(`https://localhost:7261/api/Friendship/ShowAllFriends?userId=${userId}`)
-                const requests = await axios.get(`https://localhost:7261/api/Friendship/ShowFriendRequests?userId=${userId}`)
+                const usern = await axios.get(`https://happeningevent.azurewebsites.net/api/User/GetUserById?id=${userId}`)
+                const friendz = await axios.get(`https://happeningevent.azurewebsites.net/api/Friendship/ShowAllFriends?userId=${userId}`)
+                const requests = await axios.get(`https://happeningevent.azurewebsites.net/api/Friendship/ShowFriendRequests?userId=${userId}`)
                 if (!usern.data) {
                     console.log('Couldnt fetch data!', usern.data)
                 } else {
@@ -55,13 +55,13 @@ const UserPage = () => {
                         :
                         (<p>No profile picture available</p>)
                     }
-                    <h5 className='text-center'>{user ? `${user.firstName} ${user.lastName}` : "Guest"}</h5>
+                    <h5 className='text-center font-quicksand font-bold'>{user ? `${user.firstName} ${user.lastName}` : "Guest"}</h5>
 
                     {/* edit profile section */}
                     <div>
                         <button
                             onClick={HandleEditProfile}
-                            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-Flesh 
+                            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center font-quicksand text-black bg-Flesh 
                             rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:purpleContrast 
                             dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-1">
                             Ändra profil

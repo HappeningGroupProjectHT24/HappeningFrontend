@@ -11,7 +11,7 @@ const Register = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
-  const apiBaseURL = "https://localhost:7261/api/Auth/";
+  const apiBaseURL = "https://happeningevent.azurewebsites.net/api/Auth/";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -103,11 +103,10 @@ const Register = () => {
         <button
           type="submit"
           disabled={isLoading}
-          className={`w-full py-2 text-white rounded-lg ${
-            isLoading
+          className={`w-full py-2 text-white rounded-lg ${isLoading
               ? "bg-gray-400 cursor-not-allowed"
               : "bg-Purple hover:bg-opacity-90"
-          }`}
+            }`}
         >
           {isLoading ? "Registrerar..." : "Register"}
         </button>

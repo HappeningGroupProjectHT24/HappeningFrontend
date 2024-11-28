@@ -14,6 +14,7 @@ const FRequestNoti = ({ friendReq }) => {
     const updateFriendReq = (updatedReq) => {
         setTrackFriendReq(updatedReq);
     }
+
     return (
         <>
             <div className="flex items-center relative">

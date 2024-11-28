@@ -4,25 +4,25 @@ import { jwtDecode } from "jwt-decode";
 import axios from 'axios'; // Make sure axios is imported
 
 const EventCard = ({ event, onFavoriteToggle }) => {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [isFavorite, setIsFavorite] = useState(false);
     const [userFavorites, setFavoriteEvents] = useState([]);
 
-  const currentDate = new Date();
+    const currentDate = new Date();
 
     const token = localStorage.getItem("token");
     const decodedToken = jwtDecode(token);
     const theId = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier";
     const userId = decodedToken[theId];
 
-    const addEventToUserEndpoint = `https://localhost:7261/api/User/${userId}/event`;
-    const removeEventFromuser = `https://localhost:7261/api/User/${userId}/event/${event.id}`;
+    const addEventToUserEndpoint = `https://happeningevent.azurewebsites.net/api/User/${userId}/event`;
+    const removeEventFromuser = `https://happeningevent.azurewebsites.net/api/User/${userId}/event/${event.id}`;
 
     // Fetch user favorites when the component mounts or userId changes
     useEffect(() => {
         const fetchFavorites = async () => {
             try {
-                const response = await axios.get(`https://localhost:7261/api/User/${userId}/event`);
+                const response = await axios.get(`https://happeningevent.azurewebsites.net/api/User/${userId}/event`);
                 const userFavorites = response.data; console.log
 
                 setFavoriteEvents(userFavorites);
@@ -74,7 +74,7 @@ const EventCard = ({ event, onFavoriteToggle }) => {
         } else {
             try {
                 const eventToDelete = userFavorites.find(e => e.eventId === event.eventId);
-                const response = await fetch(`https://localhost:7261/api/User/${userId}/event/${eventToDelete.id}`, {
+                const response = await fetch(`https://happeningevent.azurewebsites.net/api/User/${userId}/event/${eventToDelete.id}`, {
                     method: 'DELETE',
                 });
 
@@ -90,33 +90,33 @@ const EventCard = ({ event, onFavoriteToggle }) => {
         ? `${new Date(futureDates[0]).toLocaleString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: false })}, flera datum`
         : new Date(futureDates[0]).toLocaleString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: false });
 
-  useEffect(() => {
-    if (isPopupOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    useEffect(() => {
+        if (isPopupOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
 
         return () => {
             document.body.style.overflow = 'auto';
         };
     }, [isPopupOpen]);
 
-  const handleDetailsClick = () => {
-    console.log(
-      "Details clicked for",
-      event.title,
-      "with ID:",
-      event.eventId,
-      event.lowestPrice,
-      event
-    );
-    setIsPopupOpen(true);
-  };
+    const handleDetailsClick = () => {
+        console.log(
+            "Details clicked for",
+            event.title,
+            "with ID:",
+            event.eventId,
+            event.lowestPrice,
+            event
+        );
+        setIsPopupOpen(true);
+    };
 
-  const handleClosePopup = () => {
-    setIsPopupOpen(false);
-  };
+    const handleClosePopup = () => {
+        setIsPopupOpen(false);
+    };
 
     return (
         <div className="mt-8 m-auto flex-col w-5/6 max-w-full bg-Flesh border border-gray-200 rounded-lg shadow">

@@ -10,6 +10,7 @@ const FriendBox = ({ friends = [], friendReq = [] }) => {
         navigate('/friend', { state: { userId } })
     }
 
+
     return (
         <>
             {/* friend container */}
@@ -28,7 +29,7 @@ const FriendBox = ({ friends = [], friendReq = [] }) => {
 
                     {/*Show all friends button*/}
                     {friends.length > 4 && (<div>
-                        <Link to="/allfriends" state={friends} className='hover:text-white'>
+                        <Link to="/allfriends" state={friends} className='hover:text-white font-quicksand'>
                             Visa Alla
                         </Link>
                     </div>)}
@@ -52,7 +53,7 @@ const FriendBox = ({ friends = [], friendReq = [] }) => {
 
                                 {/* div for friends name */}
                                 <div className='flex justify-center pt-1 text-white'>
-                                    <p className='break-words text-center'>{friend.firstName} {friend.lastName}</p>
+                                    <p className='break-words text-center font-quicksand'>{friend.firstName} {friend.lastName}</p>
                                 </div>
                             </div>
 

@@ -6,7 +6,7 @@ const ForgotPassword = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [message, setMessage] = useState('');
 
-    const forgotPasswordEndpoint = 'https://localhost:7261/api/Auth/forgot-password';
+    const forgotPasswordEndpoint = 'https://happeningevent.azurewebsites.net/api/Auth/forgot-password';
     const navigate = useNavigate();
 
     const handleUsernameChange = (e) => {

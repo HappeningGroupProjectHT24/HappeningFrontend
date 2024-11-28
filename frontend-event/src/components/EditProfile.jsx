@@ -20,7 +20,7 @@ const EditProfile = () => {
 
         try {
             const updateData = { firstName, lastName, nickName, phoneNumber };
-            const response = await axios.post(`https://localhost:7261/api/User/UpdateUser?userId=${userId}`, updateData);
+            const response = await axios.post(`https://happeningevent.azurewebsites.net/api/User/UpdateUser?userId=${userId}`, updateData);
             if (response.status == 200) {
                 setSuccessMessage("Success!");
                 console.log(errorMessage)

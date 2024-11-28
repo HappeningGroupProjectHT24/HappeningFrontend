@@ -37,7 +37,7 @@ const AdminPage = () => {
                     return
                 }
 
-                const response = await axios.get(`https://localhost:7261/api/Admin/users`, {
+                const response = await axios.get(`https://happeningevent.azurewebsites.net/api/Admin/users`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
 
@@ -85,7 +85,7 @@ const AdminPage = () => {
         <>
             <div className='userPage min-h-screen bg-DarkPurple flex justify-center item-center'>
                 <div className="flex flex-col justify-top items-center mt-4 space-y-4 text-center">
-                    <strong className="text-xl">Admin settings</strong>
+                    <strong className="text-3xl font-dancing">Admin settings</strong>
 
                     {<AllUsersBox allUsers={allUsers} onDeleteUser={handleDeleteUser} />}
                 </div>
