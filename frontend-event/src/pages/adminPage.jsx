@@ -85,7 +85,7 @@ const AdminPage = () => {
         <>
             <div className='userPage min-h-screen bg-DarkPurple flex justify-center item-center'>
                 <div className="flex flex-col justify-top items-center mt-4 space-y-4 text-center">
-                    <strong className="text-xl">Admin settings</strong>
+                    <strong className="text-3xl font-dancing">Admin settings</strong>
 
                     {<AllUsersBox allUsers={allUsers} onDeleteUser={handleDeleteUser} />}
                 </div>

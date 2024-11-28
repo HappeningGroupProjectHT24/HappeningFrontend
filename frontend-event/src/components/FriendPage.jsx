@@ -4,11 +4,13 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import FriendFavoriteBox from '../components/FriendFavoriteBox';
 import { jwtDecode } from 'jwt-decode';
+import FriendBox from './FriendBox'
 
 const FriendPage = () => {
     const [user, setUser] = useState(null);
     const [friends, setFriends] = useState([]);
     const [friendReq, setFriendReq] = useState([])
+    const [button, setButton] = useState();
     const navigate = useNavigate();
     const location = useLocation();
     const userId = location.state?.userId;
@@ -41,7 +43,21 @@ const FriendPage = () => {
 
     // checks if user has sent request, is friend or is not a friend
     const isFriend = friends.some(friend => friend.id === inloggedUserId);
-    const hasSentRequest = friendReq.some(request => request.friendId === inloggedUserId);
+    const hasSentRequest = friendReq.some(request => request.userId === inloggedUserId);
+
+    const sendFriendReq = async () => {
+        try {
+            console.log('första inloggad andra kompis', inloggedUserId, user.userId)
+            await axios.post(`https://localhost:7261/api/Friendship/SendFriendRequest?userId=${inloggedUserId}&friendId=${user.userId}`)
+
+            //"fake" setting data so it'll show "pending" without refreshing whole page
+            setFriendReq(prevReq => [...prevReq, { friendId: inloggedUserId, user: { id: inloggedUserId, firstName: 'user', lastName: 'userson' } }]);
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 
     return (
         <>
@@ -55,26 +71,26 @@ const FriendPage = () => {
                         :
                         (<p>No profile picture available</p>)
                     }
-                    <h5 className='text-center'>{user ? `${user.firstName} ${user.lastName}` : "Guest"}</h5>
+                    <h5 className='text-center font-quicksand'>{user ? `${user.firstName} ${user.lastName}` : "Guest"}</h5>
 
                     {/* friend status section */}
                     <div>
                         {isFriend ? (
                             <button
-                                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-green-400 
+                                className="inline-flex items-center px-3 py-2 text-sm font-medium font-quicksand text-center text-black bg-green-400 
                                 rounded-lg hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-blue-300 dark:purpleContrast 
                                 dark:hover:bg-blue-700 dark:focus:ring-white-800 mb-1">
                                 Följer
                             </button>
                         ) : hasSentRequest ? (
                             <button
-                                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-gray-500 bg-gray-300 
+                                className="inline-flex items-center px-3 py-2 text-sm font-medium font-quicksand text-center text-gray-500 bg-gray-300 
                                 rounded-lg cursor-not-allowed mb-1">
                                 Förfrågan skickad
                             </button>
                         ) : (
-                            <button
-                                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-Flesh 
+                            <button onClick={sendFriendReq}
+                                className="inline-flex items-center px-3 py-2 text-sm font-medium font-quicksand text-center text-black bg-Flesh 
                                 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:purpleContrast 
                                 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-1">
                                 Följ
@@ -83,7 +99,7 @@ const FriendPage = () => {
                     </div>
 
                     {/* friendsBox component */}
-                    {/* <FriendBox friends={friends} /> */}
+                    <FriendBox friends={friends} />
 
                     {/* favorite Box component */}
                     <FriendFavoriteBox id={userId} />

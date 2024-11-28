@@ -48,7 +48,7 @@ const FRequestPopup = ({ friendReq, onClose, updateFriendReq }) => {
         <>
             <div className="fixed z-30 inset-0 flex items-center justify-center bg-flesh bg-opacity-50 transition-opacity duration-300 ease-out animate-fadeIn">
                 <div className="relative bg-gray-300 p-1 rounded-lg overflow-y-auto max-h-screen w-auto p-3">
-                    <p className="text-center font-bold text-gray-600 pb-2">Friend requests</p>
+                    <p className="text-center font-bold text-gray-600 pb-2 font-quicksand">Friend requests</p>
                     <button
                         onClick={onClose}
                         className="absolute top-2 right-2 text-gray-700 hover:text-black"
@@ -69,7 +69,7 @@ const FRequestPopup = ({ friendReq, onClose, updateFriendReq }) => {
                                         alt="FriendProfilePicture"
                                         className="w-12 h-12 rounded-md object-cover border-2 border-purple-500 mr-3"
                                     />
-                                    <p className="text-gray-800 flex-1">{friend.firstName} {friend.lastName}</p>
+                                    <p className="text-gray-800 flex-1 font-quicksand">{friend.firstName} {friend.lastName}</p>
 
                                 </div>
                                 <div className="flex space-x-3">

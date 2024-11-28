@@ -23,7 +23,7 @@ const FavoriteBox = ({ id }) => {
     }, [])
     return (
         <>
-            <div className='!mb-4 flex flex-row space-x-1 overflow-x-auto w-full max-w-[20rem] h-[auto] scrollbar-hide bg-red-200 shadow-lg shadow-red-200/50 rounded-md'>
+            <div className='!mb-4 flex flex-row space-x-1 overflow-x-auto w-full max-w-[20rem] h-[auto] scrollbar-hide bg-Flesh shadow-lg shadow-red-200/50 rounded-md'>
                 {favorites.length > 0
                     ?
                     (
@@ -32,7 +32,7 @@ const FavoriteBox = ({ id }) => {
                                 <FavoriteEventCard event={fa} />
                             </div>
                         ))
-                    ) : (<p className="pl-3 text-x font-semibold text-gray-800 mr-1">No favorites!</p>)}
+                    ) : (<p className="pl-3 text-x font-semibold text-gray-800 mr-1 font-quicksand">No favorites!</p>)}
 
             </div>
         </>
