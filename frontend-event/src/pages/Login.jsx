@@ -46,11 +46,6 @@ const Login = () => {
     }
   };
 
-  const handleGoogleLogin = () => {
-    window.location.href = `${apiBaseURL}google-login`;
-    navigate("/user/");
-  };
-
   const handleRegisterView = () => setView("register");
 
   return (
@@ -102,13 +97,6 @@ const Login = () => {
               Registrera
             </button>
           </div>
-          <button
-            type="button"
-            onClick={handleGoogleLogin}
-            className="w-full px-4 py-2 text-Purple border border-Purple rounded-lg hover:bg-Purple hover:text-white"
-          >
-            Logga in med Google
-          </button>
         </form>
       )}
 
