@@ -15,7 +15,7 @@ import FriendPage from "./components/FriendPage";
 
 function App() {
   return (
-    <Router basename="/happening">
+    <Router>
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<LandingPage />} />
