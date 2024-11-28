@@ -25,7 +25,9 @@ const Register = () => {
         password: password,
         confirmPassword: confirmpassword,
       });
-      alert("Registrering lyckades!");
+      alert(
+        "Registrering lyckades! Vänligen kolla din mejl och bekräfta konto"
+      );
       navigate("/login");
     } catch (error) {
       setError(
@@ -103,13 +105,23 @@ const Register = () => {
         <button
           type="submit"
           disabled={isLoading}
-          className={`w-full py-2 text-white rounded-lg ${isLoading
+          className={`w-full py-2 text-white rounded-lg ${
+            isLoading
               ? "bg-gray-400 cursor-not-allowed"
               : "bg-Purple hover:bg-opacity-90"
-            }`}
+          }`}
         >
           {isLoading ? "Registrerar..." : "Register"}
         </button>
+        <div className="mt-4 text-center">
+          <button
+            type="button"
+            onClick={() => navigate("/login")}
+            className="text-Purple underline hover:text-PurpleDark"
+          >
+            Har du redan ett konto? Logga in här
+          </button>
+        </div>
       </form>
     </div>
   );
