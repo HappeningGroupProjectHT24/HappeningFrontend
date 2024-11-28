@@ -87,7 +87,7 @@ const LandingPageEvents = () => {
   }
 
   return (
-    <div className="!mb-4 m-auto flex flex-row space-x-1 overflow-x-auto w-3/4 h-auto scrollbar-hide bg-Flesh shadow-lg shadow-grey-200/50 rounded-md">
+    <div className="!mb-4 m-auto flex flex-row space-x-1 overflow-x-auto w-3/4 h-auto scrollbar-hide bg-white rounded-md">
       {events.map((event, index) => (
         <div
           key={index}

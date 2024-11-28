@@ -16,7 +16,7 @@ const LandingPageEventCard = ({ event }) => {
   };
 
   return (
-    <div className="flex flex-col justify-between bg-Flesh border border-gray-200 rounded-lg shadow dark:purpleDark dark:border-gray-700 h-[25rem] w-full m-1">
+    <div className="flex flex-col justify-between bg-white border border-black-200 rounded-lg shadow dark:purpleDark dark:border-gray-700 h-[25rem] w-full m-1">
       {/* picture and date div */}
       <div>
         {/* picture div */}
