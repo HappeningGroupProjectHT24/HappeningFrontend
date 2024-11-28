@@ -40,7 +40,7 @@ const Login = () => {
         setError("Okänd roll");
       }
     } catch (error) {
-      setError("Ogiltigt användarnamn eller lösenord");
+      setError("Ogiltigt användarnamn eller lösenord", error);
     } finally {
       setIsLoading(false);
     }
