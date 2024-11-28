@@ -97,6 +97,15 @@ const Login = () => {
               Registrera
             </button>
           </div>
+          <div className="flex justify-between mb-4 text-sm">
+            <button
+              type="button"
+              onClick={() => navigate("/")}
+              className="text-Purple hover:underline"
+            >
+              Gå tillbaka
+            </button>
+          </div>
         </form>
       )}
 
