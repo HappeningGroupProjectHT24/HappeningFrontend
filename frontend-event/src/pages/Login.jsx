@@ -12,7 +12,7 @@ const Login = () => {
   const [view, setView] = useState("login");
 
   const navigate = useNavigate();
-  const apiBaseURL = "https://localhost:7261/api/Auth/";
+  const apiBaseURL = "https://happeningevent.azurewebsites.net/api/Auth/";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,7 +40,7 @@ const Login = () => {
         setError("Okänd roll");
       }
     } catch (error) {
-      setError("Ogiltigt användarnamn eller lösenord");
+      setError("Ogiltigt användarnamn eller lösenord", error);
     } finally {
       setIsLoading(false);
     }
@@ -86,9 +86,8 @@ const Login = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className={`w-full py-2 mb-4 text-white rounded-lg ${
-              isLoading ? "bg-gray-400" : "bg-BloodOrange hover:bg-opacity-90"
-            }`}
+            className={`w-full py-2 mb-4 text-white rounded-lg ${isLoading ? "bg-gray-400" : "bg-BloodOrange hover:bg-opacity-90"
+              }`}
           >
             {isLoading ? "Loggar in..." : "Login"}
           </button>

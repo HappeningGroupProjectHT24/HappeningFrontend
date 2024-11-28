@@ -23,7 +23,7 @@ const EventCard = ({ event }) => {
     const handleEventDelete = async () => {
         const id = event.id;
         try {
-            const response = await fetch(`https://localhost:7261/api/User/${userId}/event/${id}`, {
+            const response = await fetch(`https://happeningevent.azurewebsites.net/api/User/${userId}/event/${id}`, {
                 method: 'DELETE',
             });
 

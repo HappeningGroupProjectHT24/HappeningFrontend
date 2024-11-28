@@ -8,7 +8,7 @@ const FavoriteBox = ({ id }) => {
     useEffect(() => {
         const getFavorites = async () => {
             try {
-                const favs = axios.get(`https://localhost:7261/api/User/${id}/event`)
+                const favs = axios.get(`https://happeningevent.azurewebsites.net/api/User/${id}/event`)
                 if (favs.data) {
                     console.log('Couldnt get data!', (await favs).data)
                 }

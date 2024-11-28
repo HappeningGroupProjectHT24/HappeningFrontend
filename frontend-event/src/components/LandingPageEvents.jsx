@@ -8,9 +8,9 @@ const LandingPageEvents = () => {
   const [error, setError] = useState(null);
 
   const ticketMasterEndpoint =
-    "https://localhost:7261/TicketMasterAPI/getEvents";
+    "https://happeningevent.azurewebsites.net/TicketMasterAPI/getEvents";
   const visitStockholmEndpoint =
-    "https://localhost:7261/VisitStockholmAPI/getEvents";
+    "https://happeningevent.azurewebsites.net/VisitStockholmAPI/getEvents";
 
   const normalizeImageUrl = (url) => {
     if (url && !url.startsWith("http://") && !url.startsWith("https://")) {

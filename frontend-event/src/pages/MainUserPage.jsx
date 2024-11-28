@@ -20,9 +20,9 @@ const UserPage = () => {
     useEffect(() => {
         const getUser = async () => {
             try {
-                const usern = await axios.get(`https://localhost:7261/api/User/GetUserById?id=${userId}`)
-                const friendz = await axios.get(`https://localhost:7261/api/Friendship/ShowAllFriends?userId=${userId}`)
-                const requests = await axios.get(`https://localhost:7261/api/Friendship/ShowFriendRequests?userId=${userId}`)
+                const usern = await axios.get(`https://happeningevent.azurewebsites.net/api/User/GetUserById?id=${userId}`)
+                const friendz = await axios.get(`https://happeningevent.azurewebsites.net/api/Friendship/ShowAllFriends?userId=${userId}`)
+                const requests = await axios.get(`https://happeningevent.azurewebsites.net/api/Friendship/ShowFriendRequests?userId=${userId}`)
                 if (!usern.data) {
                     console.log('Couldnt fetch data!', usern.data)
                 } else {
