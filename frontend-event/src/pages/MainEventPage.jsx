@@ -98,7 +98,7 @@ const EventPage = () => {
         setEvents(uniqueEvents);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching events:", error);
+        console.error("Error fetching events. Please please refresh the webpage:", error);
         setError(error);
         setLoading(false);
       }
